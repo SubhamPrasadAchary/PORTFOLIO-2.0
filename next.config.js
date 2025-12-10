@@ -4,6 +4,8 @@ const path = require('path');
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  output: 'export',
+  distDir: 'dist',
   images: {
     domains: ['images.unsplash.com', 'source.unsplash.com'],
   },
