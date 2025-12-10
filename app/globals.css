@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 340 82% 95%;
+    --foreground: 20 14.3% 4.1%;
+    --card: 0 0% 100%;
+    --card-foreground: 20 14.3% 4.1%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 20 14.3% 4.1%;
+    --primary: 340 82% 65%;
+    --primary-foreground: 60 4.8% 95.9%;
+    --secondary: 340 82% 75%;
+    --secondary-foreground: 24 9.8% 10%;
+    --muted: 340 82% 85%;
+    --muted-foreground: 25 5.3% 44.7%;
+    --accent: 340 82% 65%;
+    --accent-foreground: 24 9.8% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 340 82% 90%;
+    --input: 340 82% 90%;
+    --ring: 340 82% 65%;
+    --radius: 0.5rem;
+    
+    /* Custom colorful variables */
+    --gradient-1: linear-gradient(135deg, #fbb6ce 0%, #f687b3 100%);
+    --gradient-2: linear-gradient(135deg, #f9a8d4 0%, #ec4899 100%);
+    --gradient-3: linear-gradient(135deg, #fbcfe8 0%, #f472b6 100%);
+    --gradient-4: linear-gradient(135deg, #fce7f3 0%, #f9a8d4 100%);
+    --gradient-5: linear-gradient(135deg, #fdf2f8 0%, #fbcfe8 100%);
+  }
+
+  .dark {
+    --background: 20 14.3% 4.1%;
+    --foreground: 60 9.1% 97.8%;
+    --card: 20 14.3% 4.1%;
+    --card-foreground: 60 9.1% 97.8%;
+    --popover: 20 14.3% 4.1%;
+    --popover-foreground: 60 9.1% 97.8%;
+    --primary: 340 82% 65%;
+    --primary-foreground: 60 9.1% 97.8%;
+    --secondary: 340 82% 75%;
+    --secondary-foreground: 60 9.1% 97.8%;
+    --muted: 340 82% 85%;
+    --muted-foreground: 24 5.4% 63.9%;
+    --accent: 340 82% 65%;
+    --accent-foreground: 60 9.1% 97.8%;
+    --destructive: 0 72.2% 50.6%;
+    --destructive-foreground: 60 9.1% 97.8%;
+    --border: 340 82% 90%;
+    --input: 340 82% 90%;
+    --ring: 340 82% 65%;
+    
+    /* Custom colorful variables for dark mode */
+    --gradient-1: linear-gradient(135deg, #fbb6ce 0%, #f687b3 100%);
+    --gradient-2: linear-gradient(135deg, #f9a8d4 0%, #ec4899 100%);
+    --gradient-3: linear-gradient(135deg, #fbcfe8 0%, #f472b6 100%);
+    --gradient-4: linear-gradient(135deg, #fce7f3 0%, #f9a8d4 100%);
+    --gradient-5: linear-gradient(135deg, #fdf2f8 0%, #fbcfe8 100%);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-background;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-r from-purple-500 to-pink-500 rounded-full hover:from-purple-600 hover:to-pink-600 transition-all duration-300;
+}
+
+/* Custom selection */
+::selection {
+  @apply bg-gradient-to-r from-purple-500/20 to-pink-500/20 text-foreground;
+}
+
+/* Animated background gradient */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-gradient {
+  background: linear-gradient(-45deg, #fbb6ce, #f687b3, #f9a8d4, #ec4899, #fbcfe8, #f472b6);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+}
+
+/* Glow effects */
+.glow-text {
+  text-shadow: 0 0 20px rgba(236, 72, 153, 0.5), 0 0 40px rgba(236, 72, 153, 0.3);
+}
+
+.glow-border {
+  box-shadow: 0 0 20px rgba(236, 72, 153, 0.3), 0 0 40px rgba(236, 72, 153, 0.1);
+}
+
+/* Colorful hover effects */
+.colorful-hover {
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #fbb6ce 0%, #f687b3 100%);
+  background-size: 200% 200%;
+  background-position: 0% 0%;
+}
+
+.colorful-hover:hover {
+  background-position: 100% 100%;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
